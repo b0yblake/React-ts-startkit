@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+<h1 align="center">[WIP] - React CRA TypeScript startkit</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This template should help get you started developing with Reac and Typescript in webpack.. Questions, feedback, and for now, even bikeshedding are welcome.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- [**React & TypeScript already**](#documentation): webpack tool & TypeScript has included making React great
+- [**Thorough documentation**](#documentation): All knowledge was care for (tested) & written very details
+- [**Guaranteed consistency**](docs/linting.md): Lint and prettier / Git hook for caring code type convention
+- [**First-class tests**](docs/tests.md): Practice test-driven development with sample unit(Jest - by Facebook)
 
-### `npm start`
+## Documentation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project includes a `docs` folder with more details on:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1.  [Setup and development](docs/development.md)
+2.  [Architecture](docs/architecture.md)
+3.  [Languages and technologies](docs/tech.md)
+4.  [Routing, layouts, and views](docs/routing.md)
+5.  [State management](docs/state.md)
+6.  [Tests and mocking the API](docs/tests.md)
+7.  [Linting and formatting](docs/linting.md)
+8.  [Editor integration](docs/editors.md)
+9.  [Building and deploying to production](docs/production.md)
 
-### `npm test`
+## FAQ's
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details>
+<summary>Should we need to add all configs for the new current project?</summary><br><b>
 
-### `npm run build`
+> No, you can choose one or maybe several of the richest features for your project. <br> This template it's just like the normal project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<details>
+<summary>Why would I use this boilerplate instead of Nuxt?</summary><br><b>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> It uses Vue 3, Vite tool, and rich new features, this project can be another choice.
 
-### `npm run eject`
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<details>
+<summary>TypeScript may be new to me, should I use it?</summary><br><b>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> Trending it's important for the developer world, if you don't follow that, you can be defeated.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+</details>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting started
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm install
+npm start
+npm build
+```
