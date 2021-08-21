@@ -1,0 +1,9 @@
+export const TEXT_COLOR = "#212121";
+export const LINK_COLOR = "#7A99F8";
+export const BACKGROUND_COLOR = "#E5E5E5";
+export const TABLE_BACKGROUND_COLOR = "#F4F7FB";
+export const deepBlue = "#19335D";
+export const grey = "#AAA";
+export const green = "#66AA14";
+export const darkRed = "#8D2B3B";
+export const yellow = "#FFC107";
