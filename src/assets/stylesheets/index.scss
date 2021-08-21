@@ -1,0 +1,31 @@
+@import "_variables.scss";
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "theme.scss";
+// @import "tailwind.css";
+
+//common style
+body,
+input,
+select,
+textarea,
+button {
+	font-family: $defaultFontFamily, sans-serif;
+	color: #333;
+	line-height: 1.4;
+	font-size: 14px;
+	letter-spacing: -0.2px;
+}
+
+body {
+	background-color: #f7f7f7;
+}
+
+.blind {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
