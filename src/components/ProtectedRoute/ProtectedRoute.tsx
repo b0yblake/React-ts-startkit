@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { ACCESS_TOKEN } from "../../constants/localStorage";
+import { ACCESS_TOKEN_KEY } from "../../constants/localStorage";
 import { LOGIN } from "../../constants/clientPaths";
 
 interface PrivateRouteProps {
@@ -15,7 +15,7 @@ function PrivateRoute({ component, path, exact }: PrivateRouteProps) {
       exact={exact}
       path={path}
       render={(props: any) => {
-        if (localStorage.getItem(ACCESS_TOKEN)) {
+        if (localStorage.getItem(ACCESS_TOKEN_KEY)) {
           return React.createElement(component, props);
         }
         return (
