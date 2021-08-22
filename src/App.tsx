@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { StylesProvider, ThemeProvider } from "@material-ui/core/styles";
 import theme from "./templates/themes/theme";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,6 +11,10 @@ import Home from "./containers/Home";
 
 toast.configure();
 
+const loading = () => (
+  <div className="animated fadeIn pt-3 text-center">Loading...</div>
+);
+
 function App() {
   return (
     <StylesProvider injectFirst>
@@ -18,28 +22,29 @@ function App() {
         <ToastContainer />
         <GlobalContainer />
         <BrowserRouter>
-          <Switch>
-            {/**
-             * PUBLIC PATHS
-             */}
-            <Route exact path="/">
-              <Redirect to={PATHS.LOGIN} />
+          <React.Suspense fallback={loading()}>
+            <Route>
+              <Switch>
+                {/**
+                 * PUBLIC PATHS
+                 */}
+                <Route
+                  exact
+                  path={PATHS.LOGIN}
+                  component={(props) => <AdminAccess {...props} />}
+                />
+                <Route
+                  exact
+                  path={PATHS.REGISTER}
+                  component={(props) => <AdminAccess {...props} />}
+                />
+                {/**
+                 * PROTECTED PATHS
+                 */}
+                <ProtectedRoute path={PATHS.HOME} component={Home} />
+              </Switch>
             </Route>
-            <Route
-              exact
-              path={PATHS.LOGIN}
-              component={(props) => <AdminAccess {...props} />}
-            />
-            <Route
-              exact
-              path={PATHS.REGISTER}
-              component={(props) => <AdminAccess {...props} />}
-            />
-            {/**
-             * PROTECTED PATHS
-             */}
-            <ProtectedRoute path={PATHS.HOME} component={Home} />
-          </Switch>
+          </React.Suspense>
         </BrowserRouter>
       </ThemeProvider>
     </StylesProvider>
