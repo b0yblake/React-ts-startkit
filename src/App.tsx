@@ -4,6 +4,7 @@ import { StylesProvider, ThemeProvider } from "@material-ui/core/styles";
 import theme from "./templates/themes/theme";
 import { ToastContainer, toast } from "react-toastify";
 import GlobalContainer from "./containers/Global";
+import ProtectedRoute from "./components/ProtectedRoute";
 import "react-toastify/dist/ReactToastify.css";
 import PATHS from "./constants/paths";
 import Home from "./containers/Home";
@@ -21,6 +22,9 @@ function App() {
             {/**
              * PUBLIC PATHS
              */}
+            <Route exact path="/">
+              <Redirect to={PATHS.LOGIN} />
+            </Route>
             <Route
               exact
               path={PATHS.LOGIN}
