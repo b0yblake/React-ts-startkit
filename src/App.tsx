@@ -4,6 +4,7 @@ import theme from "./templates/themes/theme";
 import { ToastContainer, toast } from "react-toastify";
 import GlobalContainer from "./containers/Global";
 import Routes from "./routes";
+import "./assets/stylesheets/index.scss";
 import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
