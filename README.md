@@ -33,16 +33,9 @@ This project includes a `docs` folder with more details on:
 </details>
 
 <details>
-<summary>Why would I use this boilerplate instead of Nuxt?</summary><br><b>
-
-> It uses Vue 3, Vite tool, and rich new features, this project can be another choice.
-
-</details>
-
-<details>
 <summary>TypeScript may be new to me, should I use it?</summary><br><b>
 
-> Trending it's important for the developer world, if you don't follow that, you can be defeated.
+> Trending is important for the developer world, if you don't follow that, you can be foggy
 
 </details>
 

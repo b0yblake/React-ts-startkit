@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import GlobalContainer from "./containers/Global";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "react-toastify/dist/ReactToastify.css";
-import PATHS from "./constants/paths";
+import PATHS from "./constants/clientPaths";
 import Home from "./containers/Home";
 
 toast.configure();

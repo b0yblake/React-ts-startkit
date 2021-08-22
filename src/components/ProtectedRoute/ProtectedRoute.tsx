@@ -1,7 +1,7 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { ACCESS_TOKEN } from '../../constants/localStorage';
-import { LOGIN_PATH } from '../../constants/paths';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
+import { ACCESS_TOKEN } from "../../constants/localStorage";
+import { LOGIN } from "../../constants/clientPaths";
 
 interface PrivateRouteProps {
   component: any;
@@ -21,7 +21,7 @@ function PrivateRoute({ component, path, exact }: PrivateRouteProps) {
         return (
           <Redirect
             to={{
-              pathname: `${LOGIN_PATH}`,
+              pathname: `${LOGIN}`,
               state: { from: props.location },
             }}
           />
