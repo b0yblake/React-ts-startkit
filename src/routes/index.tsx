@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ProtectedRoute from "../components/ProtectedRoute";
+import ProtectedRoute from "../guards/ProtectedRoute";
 import PATHS from "../constants/clientPaths";
 import Home from "../containers/Home";
 import Login from "../containers/Login";
