@@ -1,19 +1,23 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { rootReducer } from "./rootReducer";
-import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-// import history from './utils/history';
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import createSagaMiddleware from "redux-saga";
+import { routerMiddleware } from "connected-react-router";
+import saga from "./rootSaga";
+import reduxRootReducer from "./rootReducer";
+import history from "./utils/history";
 
-const persistConfig = {
-  key: "root",
-  storage,
-};
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const sagaMiddleware = createSagaMiddleware();
+const middleware = [
+  ...getDefaultMiddleware({ thunk: false }),
+  sagaMiddleware,
+  routerMiddleware(history),
+];
+
 const store = configureStore({
-  reducer: persistedReducer,
+  middleware,
+  reducer: reduxRootReducer,
 });
 
-export const persistor = persistStore(store);
+sagaMiddleware.run(saga);
 
 export type RootState = ReturnType<typeof store.getState>;
 

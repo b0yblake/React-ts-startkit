@@ -38,8 +38,10 @@ export const hasEmptyField = (object: any): boolean => {
   );
 };
 
-export default {
+const formRequiredDeclare = {
   isValidEmail,
   isValidPassword,
   hasEmptyField,
 };
+
+export default formRequiredDeclare;

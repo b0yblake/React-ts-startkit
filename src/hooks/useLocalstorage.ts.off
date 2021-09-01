@@ -1,8 +1,9 @@
 import React from "react";
+import { isFunction } from "../utils/isFunction";
 
 interface localStorageTypes {
   key?: string;
-  defaultValue?: any;
+  defaultValue?: any | (() => void);
 }
 
 export const useLocalStorageState = (
@@ -23,7 +24,7 @@ export const useLocalStorageState = (
         window.localStorage.removeItem(key);
       }
     }
-    return typeof defaultValue === "function" ? defaultValue() : defaultValue;
+    return isFunction(defaultValue) ? defaultValue() : defaultValue;
   });
 
   const prevKeyRef = React.useRef(key);

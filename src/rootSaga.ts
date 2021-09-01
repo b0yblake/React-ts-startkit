@@ -1,11 +1,10 @@
-import { combineReducers } from "redux";
-import { connectRouter } from "connected-react-router";
-import history from "./utils/history";
-import counter from "./redux/reducers/home/reducer";
+import { all } from 'redux-saga/effects';
+import rootPageSaga from './containers/Root/saga';
+import loginSaga from './containers/Login/saga';
 
-export const rootReducer = combineReducers({
-  router: connectRouter(history),
-  counter,
-});
-
-export type RootState = ReturnType<typeof rootReducer>;
+export default function* rootSaga() {
+  yield all([
+    rootPageSaga(),
+    loginSaga(),
+  ]);
+}

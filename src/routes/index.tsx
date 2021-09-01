@@ -3,7 +3,6 @@ import ProtectedRoute from "../components/ProtectedRoute";
 import PATHS from "../constants/clientPaths";
 import Home from "../containers/Home";
 import Login from "../containers/Login";
-import Register from "../containers/Register";
 
 const Routes = () => {
   return (
@@ -14,7 +13,6 @@ const Routes = () => {
            * PUBLIC PATHS
            */}
           <Route exact path={PATHS.LOGIN} component={Login} />
-          <Route exact path={PATHS.REGISTER} component={Register} />
 
           {/**
            * PROTECTED PATHS
