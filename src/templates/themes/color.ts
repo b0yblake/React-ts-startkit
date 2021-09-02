@@ -1,9 +1,50 @@
-export const TEXT_COLOR = "#212121";
-export const LINK_COLOR = "#7A99F8";
-export const BACKGROUND_COLOR = "#E5E5E5";
-export const TABLE_BACKGROUND_COLOR = "#F4F7FB";
-export const deepBlue = "#19335D";
-export const grey = "#AAA";
-export const green = "#66AA14";
-export const darkRed = "#8D2B3B";
-export const yellow = "#FFC107";
+const lightTheme = {
+  color: {
+    primary: '#6a1b9a',
+    secondary: '#FFFFFF',
+    text: {
+      primary: '#FFFFFF',
+      secondary: '#515151',
+    },
+    border: '#f0f0f0',
+    danger: '#E54345',
+  },
+  padding: {
+    small: '5px',
+    medium: '15px',
+    large: '30px',
+  },
+  margin: {
+    small: '5px',
+    medium: '15px',
+    large: '30px',
+  },
+};
+
+const darkTheme = {
+  color: {
+    primary: '#6a1b9a',
+    secondary: '#FFFFFF',
+    text: {
+      primary: '#FFFFFF',
+      secondary: '#515151',
+    },
+    border: '#f0f0f0',
+    danger: '#E54345',
+  },
+  padding: {
+    small: '5px',
+    medium: '15px',
+    large: '30px',
+  },
+  margin: {
+    small: '5px',
+    medium: '15px',
+    large: '30px',
+  },
+};
+
+export default {
+  lightTheme,
+  darkTheme
+};
