@@ -1,28 +1,18 @@
-import { call, put, debounce } from "redux-saga/effects";
-import mainRequest from "../../request";
-import { METHOD } from "../../request/constants";
-import { STATUS_CODE } from "../../constants/common";
-import { loginRequest, loginSuccess, loginFail } from "./reducer";
+import { STATUS_CODE } from '../../constants/common';
+import { PayloadAction } from '@reduxjs/toolkit';
+import {
+  call,
+  put,
+  takeEvery,
+} from 'redux-saga/effects';
+// import authenticationService from '../../services/authentication';
+import { setErrorMessages, setSuccessMessages } from '../Global/reducer';
+import { loginRequest, loginSuccess, loginFail } from './reducer';
+import { LoginForm } from '../../types';
 
-interface ILoginPayload {
-  email: string;
-  password: string;
-}
-
-const DEBOUNCE_MS = 500;
-
-function* loginFlow<T extends ILoginPayload = ILoginPayload>({
-  payload,
-}: {
-  payload: T;
-}) {
+function* loginFlow(data: PayloadAction<LoginForm>) {
   try {
-    const response = yield call(
-      mainRequest,
-      "/auth/signin",
-      payload,
-      METHOD.post
-    );
+    const response = yield call(authenticationService.login, data.payload);
 
     if (response.status === STATUS_CODE.SUCCESS) {
       const { type } = loginSuccess;
@@ -30,17 +20,18 @@ function* loginFlow<T extends ILoginPayload = ILoginPayload>({
         type,
         payload: response.data,
       });
-      // yield put({ type: setSuccessMessages.type, payload: ['Done'] });
+      yield put({ type: setSuccessMessages.type, payload: ['Login success.'] });
     } else {
       yield put({ type: loginFail.type });
     }
   } catch (error) {
+    yield put({ type: setErrorMessages.type, payload: [error.response.data.message] });
     yield put({ type: loginFail.type, payload: error.response.data.message });
   }
 }
 
 function* loginWatcher() {
-  yield debounce(DEBOUNCE_MS, loginRequest, loginFlow);
+  yield takeEvery(loginRequest, loginFlow);
 }
 
 export default loginWatcher;

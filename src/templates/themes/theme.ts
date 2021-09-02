@@ -1,5 +1,5 @@
 import { createTheme } from "@material-ui/core/styles";
-import { LINK_COLOR } from "./color";
+import themeColor from "./color";
 
 const theme = createTheme({
   typography: {
@@ -7,7 +7,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: LINK_COLOR,
+      main: themeColor.lightTheme.color.secondary,
       contrastText: "white",
     },
   },

@@ -1,15 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { ACCESS_TOKEN_KEY } from "../../constants/localStorage";
-import { REQUEST_STATUS } from "../../constants/common";
+import { createSlice } from '@reduxjs/toolkit';
+import { ACCESS_TOKEN_KEY } from '../../constants/localStorage';
+import { REQUEST_STATUS } from '../../constants/common';
 
-const sliceName = "loginSlice";
+const sliceName = 'loginSlice';
 
 export const slice = createSlice({
   name: sliceName,
   initialState: {
-    posts: [],
     loginStatus: REQUEST_STATUS.IDLE,
-    loginMessage: "",
+    loginMessage: '',
   },
   reducers: {
     makeLoading: (state, { payload }) => {
@@ -27,7 +26,7 @@ export const slice = createSlice({
       state.loginMessage = payload;
     },
     clearAPIMessage: (state) => {
-      state.loginMessage = "";
+      state.loginMessage = '';
     },
   },
 });
@@ -36,8 +35,8 @@ export const {
   loginRequest,
   makeLoading,
   loginSuccess,
-  clearAPIMessage,
   loginFail,
+  clearAPIMessage,
 } = slice.actions;
 
 export const selectLoginSlice = (state: any) => state[sliceName];
