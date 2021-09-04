@@ -1,11 +1,14 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
   "parser": "@typescript-eslint/parser",
   "extends": [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:react-hooks/recommended",
     "eslint:recommended"
   ],
   "parserOptions": {
@@ -117,6 +120,7 @@
     "react/destructuring-assignment": 0,
     "operator-linebreak": 0,
     "implicit-arrow-linebreak": 0,
-    "no-console": 0
+    "no-console": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0
   }
 }

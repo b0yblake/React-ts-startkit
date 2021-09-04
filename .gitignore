@@ -28,6 +28,5 @@ yarn-error.log*
 /build
 packages/**/build/
 packages/**/.cache/
-packages/podder-lp/public/
 packages/**/dist-dev/
 .env
