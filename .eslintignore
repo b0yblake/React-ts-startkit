@@ -1,0 +1,14 @@
+# packages/frontend/build
+# packages/frontend/config
+# packages/frontend/coverage
+# packages/frontend/node_modules
+# packages/frontend/public
+
+# node_modules/
+# config/
+# generators/
+# scripts/
+
+# jest.config.jest
+# babel.config.js
+# .eslintrc

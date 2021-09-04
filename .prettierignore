@@ -1,0 +1,13 @@
+packages/frontend/build
+packages/frontend/config
+packages/frontend/coverage
+packages/frontend/node_modules
+packages/frontend/public
+
+node_modules/
+config/
+generators/
+scripts/
+package-lock.json
+yarn.lock
+package.json
