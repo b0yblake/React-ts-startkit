@@ -26,7 +26,8 @@
     "experimentalDecorators": true,
     "rootDirs": ["src"],
     "paths": {
-      "frontend": ["packages/frontend/src/*"]
+      "frontend": ["packages/frontend/src/*"],
+      "admin": ["packages/admin/src/*"]
     }
   },
 
