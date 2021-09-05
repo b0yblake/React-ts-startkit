@@ -16,7 +16,7 @@
       "jsx": true
     },
     "useJSXTextNode": true,
-    "project": ["./tsconfig.json", "./packages/frontend/tsconfig.json"],
+    "project": ["./tsconfig.json", "./packages/frontend/tsconfig.json", "./packages/admin/tsconfig.json"],
     "tsconfigRootDir": "."
   },
   "settings": {
