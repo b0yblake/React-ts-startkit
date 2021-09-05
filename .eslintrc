@@ -8,7 +8,6 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended",
     "eslint:recommended"
   ],
   "parserOptions": {
@@ -16,7 +15,7 @@
       "jsx": true
     },
     "useJSXTextNode": true,
-    "project": ["./tsconfig.json", "./packages/frontend/tsconfig.json", "./packages/admin/tsconfig.json"],
+    "project": ["./tsconfig.json", "./packages/frontend/tsconfig.json"],
     "tsconfigRootDir": "."
   },
   "settings": {

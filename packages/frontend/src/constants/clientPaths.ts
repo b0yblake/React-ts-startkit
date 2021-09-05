@@ -7,5 +7,4 @@ const pathsList = {
   REGISTER,
   HOME,
 };
-
 export default pathsList;
