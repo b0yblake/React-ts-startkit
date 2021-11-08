@@ -2,7 +2,7 @@
 import React from 'react';
 import { StylesProvider, ThemeProvider } from '@material-ui/core/styles';
 import theme from './templates/themes/theme';
-import Routes from './routes';
+import RoutesPage from './routes';
 
 const loading = () => <div>Loading...</div>;
 
@@ -11,7 +11,7 @@ function App() {
     <StylesProvider injectFirst>
       <ThemeProvider theme={theme}>
         <React.Suspense fallback={loading()}>
-          <Routes />
+          <RoutesPage />
         </React.Suspense>
       </ThemeProvider>
     </StylesProvider>

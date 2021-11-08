@@ -1,26 +1,22 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PATHS from '../constants/clientPaths';
 import Home from '../containers/Home';
 
-const Routes = () => {
+const RoutesPage = () => {
   return (
     <BrowserRouter>
-      <Route>
-        <Switch>
-          {/**
-           * PUBLIC PATHS
-           */}
-          <Route path={PATHS.HOME} component={Home} />
+      <Routes>
+        <Route path="/" element={<Home />}>
+          {/* PUBLIC PATHS */}
+          <Route path={PATHS.HOME} element={<Home />} />
 
-          {/**
-           * PROTECTED PATHS
-           */}
+          {/* PROTECTED PATHS */}
           {/* <ProtectedRoute path={PATHS.HOME} component={Home} /> */}
-        </Switch>
-      </Route>
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 };
 
-export default Routes;
+export default RoutesPage;

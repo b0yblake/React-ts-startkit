@@ -2,26 +2,29 @@
 
 ### Routing
 
-- https://next.router.vuejs.org/installation.html
+- https://reactrouter.com/docs/en/v6/getting-started/overview#installation
 
 ```
 // Install Router
-npm install vue-router@4
+npm install react-router-dom@6
 
-// Path: @/router/index.ts
+// Path: @/routes/index.tsx
 
 └── src/
-    ├── router/
-      ├── index.ts  // Routing configuration file
+    ├── routes/
+      ├── index.txs  // Routing configuration file
 
-// Config main.ts
-import router from '@/router'
-app.use(router)
+// Config
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={...}>
+	</Routes>
+</BrowserRouter>
 
-// Load in view App.vue
-<template>
-  <router-view />
-</template>
+// Load in view App.tsx
+...
+	<RoutesPage />
+...
 ```
 
 ### Layouts (@/templates/layouts)
@@ -29,35 +32,38 @@ app.use(router)
 - Layout's useful when project get the different layout, reuse components effective
 
 ```
-// Path @/templates/layouts/LayoutDefault.vue
+// Path @/templates/layouts/MainDefault.tsx
 
-// Declare the template layout with slot tag
-<TheHeader />
-<main :class="$style.main">
-  <slot />
-</main>
-<TheFooter />
+// Declare the template layout with children / renderer
+const MainLayout = ({ children }) => {
+  return (
+    <div>
+      <Header />
+      <Main>{children}</Main>
+      <Footer />
+    </div>
+  );
+};
 
-// Calling like normal component and put data in it @/views/HomePage.vue
-import LayoutDefault from '@/templates/layouts/LayoutDefault.vue'
+// Calling
+import MainDefault from '@/templates/layouts/MainDefault.tsx'
 <template>
   <div class="home-layout">
-    <LayoutDefault>
+    <MainDefault>
       Main home
-    </LayoutDefault>
+    </MainDefault>
   </div>
 </template>
-
 ```
 
 ### Views
 
-- Calling all files \*.vue
+- Container folder may contains all type of feature: `Display` `StateManager` `TypeSafe` `SideEffect` `Style(styled-component)` `Logic`
 
 ```
 └── src/
-    ├── views/
-      ├── About.vue
-      ├── HomePage.vue
-      ├── NotFound.vue
+    ├── containers/
+      ├── Login
+      ├── Home
+      ├── Global
 ```
