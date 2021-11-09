@@ -1,17 +1,16 @@
 import React from 'react';
 import { Controller } from 'react-hook-form';
-import TextField from '@material-ui/core/TextField';
+import TextField from '@mui/material/TextField';
 
 interface IInputField {
-  form: any;
-  label: string;
-  name: string;
-  type: string;
-  disabled: boolean;
+  form?: any;
+  label?: string;
+  name?: string;
+  type?: string;
+  disabled?: boolean;
 }
 
-const InputField = (props: IInputField) => {
-  const { form, label, name, type, disabled } = props;
+const InputField = (form, label, name, type, disabled): IInputField => {
   const { formState } = form;
   const hasError = formState.errors[name];
 
@@ -33,7 +32,7 @@ const InputField = (props: IInputField) => {
           value={value}
           autoComplete="off"
           error={Boolean(hasError)}
-          helperText={formState.errors[name]?.message}
+          helperText={formState?.errors[name]?.message}
         />
       )}
     />

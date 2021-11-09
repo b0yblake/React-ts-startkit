@@ -12,6 +12,5 @@ ReactDOM.render(
       <App />
     </ConnectedRouter>
   </Provider>,
-
   document.getElementById('root-frontend'),
 );

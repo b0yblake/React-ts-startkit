@@ -1,21 +1,19 @@
-/* eslint-disable */
 import React from 'react';
-import { StylesProvider, ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import { StylesProvider } from '@mui/styles';
 import theme from './templates/themes/theme';
 import RoutesPage from './routes';
 
-const loading = () => <div>Loading...</div>;
+const Loading = () => <div>Loading...</div>;
 
-function App() {
-  return (
-    <StylesProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <React.Suspense fallback={loading()}>
-          <RoutesPage />
-        </React.Suspense>
-      </ThemeProvider>
-    </StylesProvider>
-  );
-}
+const App = () => (
+  <StylesProvider injectFirst>
+    <ThemeProvider theme={theme}>
+      <React.Suspense fallback={<Loading />}>
+        <RoutesPage />
+      </React.Suspense>
+    </ThemeProvider>
+  </StylesProvider>
+);
 
 export default App;
