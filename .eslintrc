@@ -27,6 +27,8 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/no-explicit-any": 0,
     "no-alert": 0,
     "no-throw-literal": 0,
     "semi": 2,
@@ -119,7 +121,6 @@
     "react/destructuring-assignment": 0,
     "operator-linebreak": 0,
     "implicit-arrow-linebreak": 0,
-    "no-console": 0,
-    "@typescript-eslint/explicit-module-boundary-types": 0
+    "no-console": 0
   }
 }
