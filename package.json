@@ -88,7 +88,7 @@
     "react-cookie": "^4.0.3",
     "react-dev-utils": "^11.0.4",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.12.2",
+    "react-hook-form": "^7.19.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.0.1",
     "react-toastify": "^7.0.4",
@@ -129,7 +129,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+		"rules": {
+      "react/prop-types": "off",
+      "react/no-did-update-set-state": "off",
+      "babel/no-unused-expressions": "off"
+    }
   },
   "browserslist": {
     "production": [
