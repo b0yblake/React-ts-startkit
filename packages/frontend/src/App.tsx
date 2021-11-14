@@ -1,19 +1,20 @@
 import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import { StylesProvider } from '@mui/styles';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import theme from './templates/themes/theme';
 import RoutesPage from './routes';
+import Loading from './components/Loading';
 
-const Loading = () => <div>Loading...</div>;
+// Load style sheets
+import './assets/stylesheets/index.scss';
 
 const App = () => (
-  <StylesProvider injectFirst>
+  <StyledEngineProvider injectFirst>
     <ThemeProvider theme={theme}>
       <React.Suspense fallback={<Loading />}>
         <RoutesPage />
       </React.Suspense>
     </ThemeProvider>
-  </StylesProvider>
+  </StyledEngineProvider>
 );
 
 export default App;

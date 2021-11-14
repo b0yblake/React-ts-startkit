@@ -10,6 +10,7 @@ import App from './App';
 ReactDOM.render(
   <Provider store={store}>
     {/* <ConnectedRouter history={history}> // Disabled because it's not support RRv6 */}
+
     <App />
     {/* </ConnectedRouter> */}
   </Provider>,
