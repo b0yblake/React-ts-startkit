@@ -127,7 +127,7 @@
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
     "start:frontend": "yarn install && node scripts/start.js",
-    "build:frontend": "yarn install && FRONTEND_PACKAGE=frontend node scripts/build.js"
+    "build:frontend": "yarn install && node scripts/build.js"
   },
   "eslintConfig": {
     "extends": [
