@@ -9,6 +9,44 @@
 - [**Guaranteed consistency**](docs/linting.md): Lint and prettier / Git hook for caring code type convention
 - [**First-class tests**](docs/tests.md): Practice test-driven development with sample unit(Jest - by Facebook)
 
+## Migrations
+
+- From begin 2024, the React team release the React version 19, please look careful for all new features: https://react.dev/blog/2024/04/25/react-19 <br>
+- Micro change but affect to all layout its the feature `turn Ref into props` with method `forwardRef` <br>
+- Please got this example to change
+
+Before:
+```javascript
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={classNames("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+));
+```
+
+After:
+```javascript
+const CardHeader: React.FC<React.ComponentProps<"div">> = ({
+  className,
+  ...props
+}) => (
+  <div
+    className={classNames("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+);
+```
+
+Additional Notes
+- You will not need to change how the components are being used. They should all still work as before. All tests were passing before I made this PR.
+- I cannot confirm if all warnings are eliminated. However, in my personal project, these changes removed the warnings.
+
+
 ## Documentation
 
 This project includes a `docs` folder with more details on:
